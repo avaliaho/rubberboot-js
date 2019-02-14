@@ -1,2 +1,2 @@
-# kumpparioy-js
-Kumppari Oy -sovelluksen Angular-projekti (CRUD localStorage)
+# rubberboot-js
+Rubberboot Ltd - Angular CRUD localStorage
