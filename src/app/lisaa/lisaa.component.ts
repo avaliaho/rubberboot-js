@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { kumppari } from '../kumppari.interface';
+import { rubberboot } from '../rubberboot.interface';
 import { KumppariService } from '../kumppari.service';
 
 @Component({
@@ -9,16 +9,16 @@ import { KumppariService } from '../kumppari.service';
 })
 export class LisaaComponent implements OnInit {
 
-  kumppari: kumppari[] = [];
+  rubberboot: rubberboot[] = [];
 
   constructor(private service: KumppariService) { }
 
   ngOnInit() {
-    console.log(this.service.luoId())
+    console.log(this.service.generateId())
   }
 
-  lisaaKumppari = (kumppari: kumppari) => {
-    this.service.lisaaKumppari(kumppari);
+  addRubberboot = (rubberboot: rubberboot) => {
+    this.service.addRubberboot(rubberboot);
   }
 
 }

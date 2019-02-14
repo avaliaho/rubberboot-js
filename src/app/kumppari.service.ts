@@ -1,45 +1,45 @@
 import { Injectable } from '@angular/core';
-import { kumppari } from '../app/kumppari.interface';
+import { rubberboot } from './rubberboot.interface';
 
 @Injectable()
 export class KumppariService {
 
-  kumpparit: kumppari[] = [];
+  kumpparit: rubberboot[] = [];
 
   constructor() {
     if (typeof (Storage) != undefined) {
-      let haku = localStorage.getItem("kumpparit");
-      if (haku == null) {
-        localStorage.setItem("kumpparit", "[]");
+      let search = localStorage.getItem("rubberboots");
+      if (search == null) {
+        localStorage.setItem("rubberboots", "[]");
       }
     }
   }
 
-  haeKumpparit = () => {
+  getRubberboots = () => {
     if (typeof (Storage) != undefined) {
-      return localStorage.getItem("kumpparit");
+      return localStorage.getItem("rubberboots");
     }
   }
 
-  lisaaKumppari = (kumppari: kumppari) => {
+  addRubberboot = (rubberboot: rubberboot) => {
     if (typeof (Storage) != undefined) {
-      let kumpparit = JSON.parse(localStorage.getItem("kumpparit"));
-      kumppari.id = this.luoId();
+      let rubberboots = JSON.parse(localStorage.getItem("rubberboots"));
+      rubberboot.id = this.generateId();
 
-      kumpparit.push(kumppari);
-      console.log(kumppari)
-      localStorage.setItem("kumpparit", kumpparit);
+      rubberboots.push(rubberboot);
+      console.log(rubberboot);
+      localStorage.setItem("rubberboots", rubberboots);
     }
   }
 
-  luoId = () => {
+  generateId = () => {
     if (typeof (Storage) != undefined) {
-      let kumpparit: kumppari[] = JSON.parse(localStorage.getItem("kumpparit"));
-      let indeksi = 0;
-      for (let kumppari of kumpparit) {
-        indeksi++;
+      let rubberboots: rubberboot[] = JSON.parse(localStorage.getItem("rubberboots"));
+      let index = 0;
+      for (let rubberboot of rubberboots) {
+        index++;
       }
-      return indeksi;
+      return index;
     }
   }
 

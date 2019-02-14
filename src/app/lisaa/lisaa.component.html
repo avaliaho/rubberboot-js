@@ -1,20 +1,20 @@
-<h3>Tuotteen lisäys</h3>
+<h3>Adding a product</h3>
 
 <div class="form-group">
-  <label for="nimi">Nimi</label>
-  <input [(ngModel)]="kumppari.nimi" type="text" class="form-control" id="nimi" placeholder="Nimi">
+  <label for="nimi">Name</label>
+  <input [(ngModel)]="rubberboot.name" type="text" class="form-control" id="name" placeholder="Name">
 </div>
 <div class="form-group">
-  <label for="vari">Väri</label>
-  <input [(ngModel)]="kumppari.vari" type="text" class="form-control" id="vari" placeholder="Väri">
+  <label for="vari">Color</label>
+  <input [(ngModel)]="rubberboot.color" type="text" class="form-control" id="color" placeholder="Color">
 </div>
 <div class="form-group">
-  <label for="hinta">Hinta</label>
-  <input [(ngModel)]="kumppari.hinta" type="number" class="form-control" id="hinta" placeholder="Hinta">
+  <label for="hinta">Price</label>
+  <input [(ngModel)]="rubberboot.price" type="number" class="form-control" id="price" placeholder="Price">
 </div>
 <div class="form-group">
-  <label for="varastotilanne">Varastotilanne</label>
-  <input [(ngModel)]="kumppari.varastotilanne" type="text" class="form-control" id="varastotilanne" placeholder="Varastotilanne">
+  <label for="availability">Availability</label>
+  <input [(ngModel)]="rubberboot.availability" type="number" class="form-control" id="availability" placeholder="Availability">
 </div>
-<button class="btn btn-primary" (click)="lisaaKumppari(kumppari)">Lisää kumppari</button>
-<a routerLink="/listaus">Peruuta</a>
+<button class="btn btn-primary" (click)="addRubberboot(rubberboot)">Add a product</button>
+<a routerLink="/listaus">Cancel</a>
