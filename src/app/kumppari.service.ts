@@ -8,7 +8,7 @@ export class KumppariService {
 
   constructor() {
     if (typeof (Storage) != undefined) {
-      let search = localStorage.getItem("rubberboots");
+      let search = JSON.parse(localStorage.getItem("rubberboots"));
       if (search == null) {
         localStorage.setItem("rubberboots", "[]");
       }
@@ -17,7 +17,7 @@ export class KumppariService {
 
   getRubberboots = () => {
     if (typeof (Storage) != undefined) {
-      return localStorage.getItem("rubberboots");
+      return JSON.parse(localStorage.getItem("rubberboots"));
     }
   }
 
@@ -27,8 +27,7 @@ export class KumppariService {
       rubberboot.id = this.generateId();
 
       rubberboots.push(rubberboot);
-      console.log(rubberboot);
-      localStorage.setItem("rubberboots", rubberboots);
+      localStorage.setItem("rubberboots", JSON.stringify(rubberboots));
     }
   }
 
