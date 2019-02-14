@@ -9,7 +9,7 @@ import { KumppariService } from '../kumppari.service';
 })
 export class LisaaComponent implements OnInit {
 
-  rubberboot: rubberboot[] = [];
+  rubberboot: rubberboot = { id: 0, name: "", color: "", price: null, availability: null };
 
   constructor(private service: KumppariService) { }
 

@@ -4,8 +4,6 @@ import { rubberboot } from './rubberboot.interface';
 @Injectable()
 export class KumppariService {
 
-  kumpparit: rubberboot[] = [];
-
   constructor() {
     if (typeof (Storage) != undefined) {
       let search = JSON.parse(localStorage.getItem("rubberboots"));
@@ -25,6 +23,7 @@ export class KumppariService {
     if (typeof (Storage) != undefined) {
       let rubberboots = JSON.parse(localStorage.getItem("rubberboots"));
       rubberboot.id = this.generateId();
+      console.log(rubberboot)
 
       rubberboots.push(rubberboot);
       localStorage.setItem("rubberboots", JSON.stringify(rubberboots));
