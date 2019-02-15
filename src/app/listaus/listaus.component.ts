@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { KumppariService } from '../kumppari.service';
+import { rubberboot } from '../rubberboot.interface';
 
 @Component({
   selector: 'app-listaus',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListausComponent implements OnInit {
 
-  constructor() { }
+  rubberboots: rubberboot[] = [];
+
+  constructor(private service: KumppariService) { }
 
   ngOnInit() {
+    this.rubberboots = this.service.getRubberboots();
   }
 
 }

@@ -1,3 +1,20 @@
-<p>
-  muokkaa works!
-</p>
+<h3>Editing a product</h3>
+
+<div class="form-group">
+  <label for="nimi">Name</label>
+  <input [(ngModel)]="rubberboot.name" type="text" class="form-control" id="name" placeholder="Name">
+</div>
+<div class="form-group">
+  <label for="vari">Color</label>
+  <input [(ngModel)]="rubberboot.color" type="text" class="form-control" id="color" placeholder="Color">
+</div>
+<div class="form-group">
+  <label for="hinta">Price</label>
+  <input [(ngModel)]="rubberboot.price" type="number" class="form-control" id="price" placeholder="Price">
+</div>
+<div class="form-group">
+  <label for="availability">Availability</label>
+  <input [(ngModel)]="rubberboot.availability" type="number" class="form-control" id="availability" placeholder="Availability">
+</div>
+<button class="btn btn-primary" (click)="saveChanges(rubberboot)">Save changes</button>
+<button class="btn btn-secondary" (click)="cancel()">Cancel</button>

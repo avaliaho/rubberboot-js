@@ -2,7 +2,7 @@
 
 <a routerLink="/lisaa">Add a new product</a>
 
-<table class="table table-bordered">
+<table class="table">
   <thead class="thead-light">
     <tr>
       <th>Id</th>
@@ -10,9 +10,17 @@
       <th>Color</th>
       <th>Price</th>
       <th>Availability</th>
+      <th>Actions</th>
     </tr>
   </thead>
   <tbody>
-    <tr></tr>
+    <tr *ngFor="let rubberboot of rubberboots; let i = index">
+      <td>{{ rubberboot.id }}</td>
+      <td>{{ rubberboot.name }}</td>
+      <td>{{ rubberboot.color }}</td>
+      <td>{{ rubberboot.price }}</td>
+      <td>{{ rubberboot.availability }}</td>
+      <td><a routerLink="/muokkaa/{{ i }}">Edit</a> <a routerLink="/poista/{{ i }}">Delete</a></td>
+    </tr>
   </tbody>
 </table>

@@ -13,6 +13,13 @@ export class KumppariService {
     }
   }
 
+  getRubberbootById = (id: number) => {
+    if (typeof (Storage) != undefined) {
+      let rubberboots: rubberboot[] = JSON.parse(localStorage.getItem("rubberboots"));
+      return rubberboots[id]
+    }
+  }
+
   getRubberboots = () => {
     if (typeof (Storage) != undefined) {
       return JSON.parse(localStorage.getItem("rubberboots"));
@@ -26,6 +33,22 @@ export class KumppariService {
       console.log(rubberboot)
 
       rubberboots.push(rubberboot);
+      localStorage.setItem("rubberboots", JSON.stringify(rubberboots));
+    }
+  }
+
+  editRubberBoot = (id: number, editedBoot: rubberboot) => {
+    if (typeof (Storage) != undefined) {
+      let rubberboots: rubberboot[] = JSON.parse(localStorage.getItem("rubberboots"));
+      rubberboots[id] = editedBoot;
+      localStorage.setItem("rubberboots", JSON.stringify(rubberboots));
+    }
+  }
+
+  deleteRubberboot = (id: number) => {
+    if (typeof(Storage) != undefined) {
+      let rubberboots: rubberboot[] = JSON.parse(localStorage.getItem("rubberboots"));
+      rubberboots.splice(id, 1);
       localStorage.setItem("rubberboots", JSON.stringify(rubberboots));
     }
   }

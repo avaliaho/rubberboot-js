@@ -1,3 +1,15 @@
-<p>
-  poista works!
-</p>
+<h3>Delete a product</h3>
+
+<ul class="list-group">
+  <li class="list-group-item">Id: {{ rubberboot.id }}</li>
+  <li class="list-group-item">Name: {{ rubberboot.name }}</li>
+  <li class="list-group-item">Color: {{ rubberboot.color }}</li>
+  <li class="list-group-item">Price: {{ rubberboot.price }}</li>
+  <li class="list-group-item">Availability: {{ rubberboot.availability }}</li>
+</ul>
+
+<br>
+
+Really delete this product? This action cannot be undone.<br><br>
+<button (click)="deleteRubberboot()" type="button" class="btn btn-danger">Delete</button>
+<button (click)="cancel()" type="button" class="btn btn-secondary">Cancel</button>
